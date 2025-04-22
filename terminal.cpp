@@ -49,16 +49,17 @@ void terminal_app()
         std::cout << "input something: ";
         std::getline(std::cin, input);
 
-        if (input.empty()) continue;
-
         if (input == "exit") {
             break;
         }
-
+        if (input.empty()) {
+            continue;
+        }
         std::vector<std::string> vector = cmd2vec(input, ' ');
 
-        if (vector.empty()) continue;
-
+        if (vector.empty()) {
+            continue;
+        }
         std::vector<char*> argv = castArgs(vector);
 
         run_cmd(argv);
