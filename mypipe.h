@@ -1,4 +1,6 @@
  #include <vector>
+ #include <array>
+ #include <string>
  //mypipe.h
 
  // Class mypipe provides a simple wrapper around a Unix pipe,
