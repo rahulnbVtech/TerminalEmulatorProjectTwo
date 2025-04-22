@@ -2,6 +2,8 @@
 #include <unistd.h>
 #include <iostream>
 #include "utility.h"
+#include <sys/types.h>
+#include <sys/wait.h>
 
  // run_cmd:
  // Takes a vector of C-style strings (char*), representing the command and its arguments.
@@ -54,9 +56,11 @@ void terminal_app()
         }
 
         std::vector<std::string> vector = cmd2vec(input, ' ');
+
         if (vector.empty()) continue;
 
         std::vector<char*> argv = castArgs(vector);
+
         run_cmd(argv);
     }
 }
